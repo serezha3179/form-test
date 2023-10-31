@@ -96,6 +96,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   response: () => (/* binding */ response)
 /* harmony export */ });
 /* harmony import */ var _mask__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mask */ "./js/mask.js");
+/* harmony import */ var _validation__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./validation */ "./js/validation.js");
+
 
 async function response(inputs, formData) {
   let response;
@@ -159,10 +161,13 @@ __webpack_require__.r(__webpack_exports__);
 window.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll('.form__input');
   let maskvalue = false;
-  function maskValueChange() {
-    return maskvalue = true;
-  }
-  _mask_js__WEBPACK_IMPORTED_MODULE_0__["default"].on('complete', () => maskValueChange());
+
+  // function maskValueChange(boolean) {
+  //     return maskvalue = boolean
+  // }
+
+  // mask.on('complete', () => maskValueChange(true));
+  _mask_js__WEBPACK_IMPORTED_MODULE_0__["default"].on('complete', () => maskvalue = true);
   form.addEventListener('submit', formSend);
   function formSend(e) {
     e.preventDefault();
@@ -170,6 +175,7 @@ window.addEventListener("DOMContentLoaded", function () {
     let formData = new FormData(form);
     if (error === 0) {
       (0,_requests_js__WEBPACK_IMPORTED_MODULE_1__.response)(inputs, formData);
+      maskvalue = false;
     }
   }
   function formValidate(form) {

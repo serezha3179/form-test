@@ -1,4 +1,5 @@
 import mask from "./mask";
+import  "./validation"
 
 
     async function response(inputs,formData) {
@@ -12,7 +13,7 @@ import mask from "./mask";
                 let result = await response.json();
                  inputs.forEach(item => {
                     if(item.id === "formPhone") {
-                        mask.value = ""
+                        mask.value = "";
                     } else {
                         item.value = '';
                     }
@@ -36,7 +37,7 @@ import mask from "./mask";
             
                inputs.forEach(item => {
                 if(item.id === "formPhone") {
-                    mask.value = ""
+                    mask.value = "";
                 } else {
                     item.value = '';
                 }
@@ -45,9 +46,6 @@ import mask from "./mask";
         } catch(err) {
             alert('Сервер не запущен')
         }
-       
-        
-    
     }
 
 export { response }

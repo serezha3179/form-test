@@ -1,15 +1,14 @@
 import mask from "./mask.js";
 import { response } from "./requests.js";
+
 window.addEventListener("DOMContentLoaded", function() {
+    
 
     const inputs = document.querySelectorAll('.form__input');
 
-    let maskvalue = false
-
-    function maskValueChange() {
-       return maskvalue = true
-    }
-    mask.on('complete', () => maskValueChange());
+    let maskvalue = false;
+    
+    mask.on('complete', () =>  maskvalue = true);
 
     form.addEventListener('submit', formSend);
 
@@ -23,6 +22,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
           if(error === 0) {
                 response(inputs,formData)
+                maskvalue = false
         }
     }
     function formValidate(form) {
