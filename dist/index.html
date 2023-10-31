@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>test</title>
+<link href="./css/main.css" rel="stylesheet"></head>
+  <body>
+     <div class="wrapper">
+        <div class="form">
+          <form action="#" id="form" class="form__body">
+            <h1 class="form__title">Тестовое задание</h1>
+                <div class="form__item">
+                  <label for="formName" class="form__label">Имя:</label>
+                  <input type="text" id="formName" name="name" class="form__input required">
+                </div>
+                <div class="form__item">  
+                  <label for="formEmail" class="form__label">Е-mail:</label>
+                  <input type="text" id="formEmail" name="email" class="form__input required email">
+                </div>  
+                <div class="form__item">
+                  <label for="formPhone" class="form__label">Телефон:</label>
+                  <input type="phone" id="formPhone" name="phone" class="form__input required phone">
+                </div>
+                <div class="form__item">
+                  <label for="formMessage" class="form__label">Сообщение:</label>
+                  <textarea name="message" id="formMessage" cols="30" rows="10" class="form__input required"></textarea>
+                </div>
+              <button type="submit" class="form__button">Отправить</button>
+          </form>
+        </div>
+        <button class="button-popup">Показать модальное окно</button>
+     </div>
+     <div class="popup">
+        <div class="popup__body">
+            <div class="popup__content">
+                <span class="popup__close">
+                </span>
+                <h1 class="popup__title">Модальное окно</h1>
+            </div>
+        </div>
+    </div>
+  <script defer="defer" src="./js/vendors-node_modules_imask_esm_index_js.js"></script><script defer="defer" src="./js/main.js"></script></body>
+</html>

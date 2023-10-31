@@ -1,0 +1,83 @@
+@import reset
+@import popup
+
+
+html,body 
+    height: 100%
+
+body
+    background: #E8DEF8
+    &.is-lock
+        overflow: hidden
+
+.wrapper 
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    min-height: 100%
+    padding: 10px
+.form 
+    display: flex
+    justify-content: center
+    align-items: center
+    max-width: 500px
+    width: 100%
+    margin: 0 auto 20px
+    padding: 20px 10px 20px 10px
+    border-radius: 10px
+    background: lightgrey
+    box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30)
+    
+    &__body 
+        max-width: 300px
+        width: 100%
+
+    &__title
+        text-align: center
+        margin: 0 0 10px 0   
+    
+
+    &__item 
+        margin: 0 0 10px 0
+
+
+    &__label 
+        display: block
+
+    &__input 
+        width: 100%
+        padding: 0 0 0 10px
+        border: 1px solid black
+        border-radius: 3px
+        outline: none
+        &:focus 
+            outline: 1px solid #6750A4
+        &.js-error 
+            border: 1px solid red
+            &:focus
+                outline: 1px solid red
+
+    &__button 
+        display: block
+        border: none
+        border-radius: 5px
+        margin: 0 auto
+        padding: 2px 15px
+        cursor: pointer
+        background: #6750A4
+        color: #ffffff
+        &:hover
+            box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30)
+
+.button-popup 
+    padding: 5px 10px
+    border: none
+    border-radius: 10px
+    background: #6750A4
+    color: white
+    cursor: pointer
+
+.button-popup:hover
+     box-shadow: 0px 1px 3px 1px rgba(0, 0, 0, 0.15), 0px 1px 2px 0px rgba(0, 0, 0, 0.30)
+
