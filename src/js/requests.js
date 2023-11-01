@@ -1,5 +1,5 @@
 import mask from "./mask";
-import  "./validation"
+import  "./validation";
 
 
     async function response(inputs,formData) {
@@ -44,7 +44,14 @@ import  "./validation"
             })
             }
         } catch(err) {
-            alert('Сервер не запущен')
+            alert('Сервер не запущен');
+            inputs.forEach(item => {
+                if(item.id === "formPhone") {
+                    mask.value = "";
+                } else {
+                    item.value = '';
+                }
+            })
         }
     }
 

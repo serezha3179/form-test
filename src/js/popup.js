@@ -3,6 +3,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const popupButton = document.querySelector('.button-popup');
     const popup = document.querySelector('.popup');
     const popupBody = document.querySelector('.popup__body');
+    const popupContent = document.querySelector('.popup__content');
     const popupClose = document.querySelector('.popup__close');
     let paddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + "px";
     window.addEventListener('resize', () => {
@@ -14,6 +15,7 @@ window.addEventListener("DOMContentLoaded", () => {
         popup.classList.add('is-open');
         body.classList.add('is-lock');
         body.style.paddingRight = paddingValue;
+        popupContent.style.transform = `translateX(-${parseInt(paddingValue) / 2  + "px"})`;
         popup.addEventListener('click', closePopup);
     }
     function closePopup(e) {
@@ -21,6 +23,7 @@ window.addEventListener("DOMContentLoaded", () => {
             popup.classList.remove('is-open');
             body.classList.remove('is-lock');
             body.style.paddingRight = "";
+            popupContent.style.transform = `translateX(${0})`;
             popup.removeEventListener('click', closePopup);
         }
     }

@@ -60,6 +60,7 @@ window.addEventListener("DOMContentLoaded", () => {
   const popupButton = document.querySelector('.button-popup');
   const popup = document.querySelector('.popup');
   const popupBody = document.querySelector('.popup__body');
+  const popupContent = document.querySelector('.popup__content');
   const popupClose = document.querySelector('.popup__close');
   let paddingValue = window.innerWidth - document.querySelector('.wrapper').offsetWidth + "px";
   window.addEventListener('resize', () => {
@@ -70,6 +71,7 @@ window.addEventListener("DOMContentLoaded", () => {
     popup.classList.add('is-open');
     body.classList.add('is-lock');
     body.style.paddingRight = paddingValue;
+    popupContent.style.transform = `translateX(-${parseInt(paddingValue) / 2 + "px"})`;
     popup.addEventListener('click', closePopup);
   }
   function closePopup(e) {
@@ -77,6 +79,7 @@ window.addEventListener("DOMContentLoaded", () => {
       popup.classList.remove('is-open');
       body.classList.remove('is-lock');
       body.style.paddingRight = "";
+      popupContent.style.transform = `translateX(${0})`;
       popup.removeEventListener('click', closePopup);
     }
   }
@@ -140,6 +143,13 @@ async function response(inputs, formData) {
     }
   } catch (err) {
     alert('Сервер не запущен');
+    inputs.forEach(item => {
+      if (item.id === "formPhone") {
+        _mask__WEBPACK_IMPORTED_MODULE_0__["default"].value = "";
+      } else {
+        item.value = '';
+      }
+    });
   }
 }
 
@@ -156,17 +166,12 @@ async function response(inputs, formData) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mask_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./mask.js */ "./js/mask.js");
 /* harmony import */ var _requests_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./requests.js */ "./js/requests.js");
+// import { Masked } from "imask/esm/index.js";
 
 
 window.addEventListener("DOMContentLoaded", function () {
   const inputs = document.querySelectorAll('.form__input');
   let maskvalue = false;
-
-  // function maskValueChange(boolean) {
-  //     return maskvalue = boolean
-  // }
-
-  // mask.on('complete', () => maskValueChange(true));
   _mask_js__WEBPACK_IMPORTED_MODULE_0__["default"].on('complete', () => maskvalue = true);
   form.addEventListener('submit', formSend);
   function formSend(e) {

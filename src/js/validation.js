@@ -1,3 +1,4 @@
+// import { Masked } from "imask/esm/index.js";
 import mask from "./mask.js";
 import { response } from "./requests.js";
 
@@ -7,7 +8,7 @@ window.addEventListener("DOMContentLoaded", function() {
     const inputs = document.querySelectorAll('.form__input');
 
     let maskvalue = false;
-    
+  
     mask.on('complete', () =>  maskvalue = true);
 
     form.addEventListener('submit', formSend);
@@ -15,7 +16,7 @@ window.addEventListener("DOMContentLoaded", function() {
     function formSend(e) {
 
           e.preventDefault();
-
+           
           let error = formValidate(form);
         
           let formData = new FormData(form);
